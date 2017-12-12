@@ -469,9 +469,7 @@ void inmenu(int vt)
  
 void menu(int vt,LISTKho x)
 {
-    int Ma;
-	FILE *f ;
-	errno_t err = fopen_s( &f,"input.txt","rt" );
+   int Ma;
 	
     
     char c;
@@ -492,8 +490,9 @@ void menu(int vt,LISTKho x)
 			
 			case 1: system("cls"); 
 				{
-                    int n;                  
-					fscanf_s(f,"%d",&n);
+                    int n;      
+					printf("nhap so san pham: ");
+					scanf_s("%d",&n);
 					printf_s("so luong san pham: %d ", n);
                     for(int i = 1; i <= n ;i++)
                     {
@@ -513,7 +512,7 @@ void menu(int vt,LISTKho x)
                     fflush(stdin);
                     printf("\nNhap Ma San Pham can tim:");
                     scanf_s("%d",&Ma);
-					TimKiem(x ,Ma); menu(vt,x); break;
+					TimKiem(x ,Ma); _getch();menu(vt,x); break;
 			case 4: system("cls");inSPMax(x);_getch(); menu(vt,x); break;
 			case 5: system("cls"); inSPMin(x); _getch();menu(vt,x); break;
 			case 6: system("cls"); inSPSLLonNhat(x);_getch(); menu(vt,x); break;
